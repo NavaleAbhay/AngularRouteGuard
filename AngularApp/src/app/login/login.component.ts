@@ -20,7 +20,7 @@ logIn(){
     console.log("Login button clicked");
     this.loggedIn=true;
     console.log("user is valid");
-    this.router.navigate(['/home']);
+    // this.router.navigate(['/home']);
     return true;
   }
   else{
