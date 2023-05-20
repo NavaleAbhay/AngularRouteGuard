@@ -8,9 +8,7 @@
     <button type="submit">Login</button>
 </form>
   <div *ngIf="loggedIn">
-    <a [routerLink]="['/home']">Home</a> | 
-    <a [routerLink]="['/home/contact']">Contact</a> |
-    <a [routerLink]="['/home/privacy']">Privacy</a>
+   <app-home></app-home>
   </div>
 
   

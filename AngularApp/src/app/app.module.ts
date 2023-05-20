@@ -14,14 +14,14 @@ import { RoutingComponent } from './routing/routing.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { AuthGuard } from './auth.guard';
 
-export const routes:Routes=[
+ const routes:Routes=[
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   {
     path: 'home',
     component: HomeComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      // { path: '', redirectTo: 'home', pathMatch: 'full' }, 
       { path: 'contact', component: ContactComponent, canActivate: [AuthGuard] },
       { path: 'privacy', component: PrivacyComponent }
     ]
@@ -43,10 +43,8 @@ export const routes:Routes=[
     CommonModule,
     RouterModule.forRoot(routes),
     ],
-    exports:[
-RouterModule
-    ],
-  providers: [AuthService,],
+
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

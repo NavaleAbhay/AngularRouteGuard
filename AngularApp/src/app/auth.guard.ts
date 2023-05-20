@@ -15,15 +15,12 @@ export class AuthGuard implements CanActivate {
       {
         console.log(this.role)
           if( this.role == "Admin"){
-       this.router.navigateByUrl('/home/contact')
          return true;
-    
        }
        alert("Your Role must be Admin Please Login")
        this.router.navigateByUrl('/login')
-          return false;
+       return false;
       }
-    return true;
   }
   
 }

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private subject=new Subject<any>;
-users:any[]=[
+users:User[]=[
   {
     "userId":1,
     "userName":"Abhay",
@@ -39,11 +40,9 @@ loggedIn:any;
     const user=this.users.find((u)=>u.userName ===username && u.password===password)
     if(user){
       this.loggedIn=user;
-      this.subject.next(user.role);
+      localStorage.setItem("role",user.role)
       return true;
     }
     return false;
   }
-
-  
 }

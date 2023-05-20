@@ -20,16 +20,12 @@ logIn(){
     console.log("Login button clicked");
     this.loggedIn=true;
     console.log("user is valid");
-    this.role=this.svc.loggedIn.role;
-    localStorage.setItem('role',this.role);
-    console.log(this.role);
     this.router.navigate(['/home']);
     return true;
   }
   else{
-    console.log("Invalid login");
+    alert("Invalid login");
     return false;
   }
-
 }
 }
