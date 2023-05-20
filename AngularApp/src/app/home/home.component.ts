@@ -6,12 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-
+role=localStorage.getItem("role");
 statusAbhay:boolean=false;
 statusSahil:boolean=false;
 ngOnInit(): void {
-  this.statusAbhay=false ;
-  this.statusSahil=true ;
+
+if(this.role=="Admin"){
+  this.statusAbhay=true;
+  this.statusAbhay=true;
+}
+else{
+  this.statusSahil=false;
+  this.statusSahil=false;
+}
+
 
 }
 
