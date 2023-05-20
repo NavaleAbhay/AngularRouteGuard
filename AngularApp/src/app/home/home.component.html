@@ -1,6 +1,11 @@
 <h3>Home</h3>
 <div>
 <a [routerLink]="['home/contact']">Contact</a> |
-<a [routerLink]="['home/privacy']">Privacy</a>
-</div>
+<a *ngIf="statusAbhay" [routerLink]="['home/privacy']">Privacy</a>
+<a *ngIf="statusAbhay" [routerLink]="['home/about']">About</a>
+<a *ngIf="statusSahil" [routerLink]="['home/terms&conditions']">terms&conditions</a>
+<a *ngIf="statusSahil" [routerLink]="['home/products']">products</a>
+
+
 <router-outlet></router-outlet>
+</div>

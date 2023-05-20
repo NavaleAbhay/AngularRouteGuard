@@ -7,5 +7,4 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularApp';
- @Input() loggedIn:string |any;
 }

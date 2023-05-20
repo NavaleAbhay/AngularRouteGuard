@@ -21,9 +21,13 @@ import { AuthGuard } from './auth.guard';
     path: 'home',
     component: HomeComponent,
     children: [
-      // { path: '', redirectTo: 'home', pathMatch: 'full' }, 
+      //  { path: '', redirectTo: 'home', pathMatch: 'full' }, 
       { path: 'contact', component: ContactComponent, canActivate: [AuthGuard] },
-      { path: 'privacy', component: PrivacyComponent }
+      { path: 'privacy', component: PrivacyComponent },
+      { path: 'about', component: PrivacyComponent },
+      { path: 'terms&conditions', component: PrivacyComponent },
+      { path: 'products', component: PrivacyComponent },
+
     ]
   },
 ]
@@ -41,7 +45,9 @@ import { AuthGuard } from './auth.guard';
     BrowserModule,
     FormsModule,
     CommonModule,
-    RouterModule.forRoot(routes),
+      RouterModule.forRoot(routes),
+    // RouterModule
+
     ],
 
   providers: [AuthService],

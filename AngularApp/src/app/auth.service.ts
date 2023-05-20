@@ -6,7 +6,6 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class AuthService {
-  private subject=new Subject<any>;
 users:User[]=[
   {
     "userId":1,

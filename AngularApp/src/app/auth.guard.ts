@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
          return true;
        }
        alert("Your Role must be Admin Please Login")
-       this.router.navigateByUrl('/login')
+      //  this.router.navigateByUrl('/login')
        return false;
       }
   }
