@@ -13,6 +13,9 @@ import { RouterModule, Routes,ActivatedRoute } from '@angular/router';
 import { RoutingComponent } from './routing/routing.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { AuthGuard } from './auth.guard';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { HttpClientModule } from '@angular/common/http';
+
 
  const routes:Routes=[
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -46,11 +49,12 @@ import { AuthGuard } from './auth.guard';
     FormsModule,
     CommonModule,
       RouterModule.forRoot(routes),
+      HttpClientModule,
+
     // RouterModule
 
     ],
-
-  providers: [AuthService],
+  providers: [JwtHelperService,    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

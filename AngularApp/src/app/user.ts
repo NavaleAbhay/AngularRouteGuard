@@ -1,4 +1,4 @@
 export class User {
     
-    constructor(public userId:number,public userName:string,public password:string,public role:string){}
+    constructor(public contactNumber:string,public password:string){}
 }
